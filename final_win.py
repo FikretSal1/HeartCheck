@@ -1,5 +1,6 @@
 # напиши здесь код третьего экрана приложения# напиши здесь код третьего экрана приложения
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QLineEdit
 
 from instr import *  #загружаем переменные из файла instr.py
@@ -83,9 +84,11 @@ class FinalWin(QWidget):
         self.layout_line.addWidget(self.index_text, alignment = Qt.AlignCenter)
         self.layout_line.addWidget(self.workh_text, alignment = Qt.AlignCenter)         
         self.setLayout(self.layout_line)
-
+        self.index_text.setFont(QFont("f", 20))
+        self.workh_text.setFont(QFont("f", 20))
     ''' устанавливает, как будет выглядеть окно (надпись, размер, место) '''
     def set_appear(self):
         self.setWindowTitle(txt_finalwin)
         self.resize(win_width, win_height)
         self.move(win_x, win_y)
+        self.setStyleSheet("background-color: rgb(170, 255, 50);")

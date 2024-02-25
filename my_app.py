@@ -15,6 +15,7 @@ class MainWin(QWidget):
         self.setWindowTitle(txt_title)
         self.resize(win_width, win_height)
         self.move(win_x, win_y)
+        self.setStyleSheet("background-color: rgb(170, 255, 255);")
     def initUI(self):
         self.hello_text = QLabel(txt_hello)
         self.instruction = QLabel(txt_instruction)
@@ -24,6 +25,9 @@ class MainWin(QWidget):
         self.layout.addWidget(self.instruction)
         self.layout.addWidget(self.btn_next)
         self.setLayout(self.layout)
+        self.btn_next.setStyleSheet("background-color: rgb(100, 100, 100);")
+        self.hello_text.setFont(QFont(txt_hello, 18, QFont.Bold))
+        self.instruction.setFont(QFont(txt_instruction, 12))
     def next_click(self):
         self.hide()
         self.tw = TestWin()

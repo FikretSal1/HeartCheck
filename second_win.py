@@ -25,12 +25,16 @@ class TestWin(QWidget):
         self.setWindowTitle(txt_title)
         self.resize(win_width, win_height)
         self.move(win_x, win_y)
+        self.setStyleSheet("background-color: rgb(170, 255, 255);")
     def initUI(self):
         self.btn_next = QPushButton(txt_sendresults, self)
         self.btn_test1 = QPushButton(txt_starttest1, self)
         self.btn_test2 = QPushButton(txt_starttest2, self)
         self.btn_test3 = QPushButton(txt_starttest3, self)
-
+        self.btn_next.setStyleSheet("background-color: rgb(100, 100, 100);")
+        self.btn_test1.setStyleSheet("background-color: rgb(100, 100, 100);")
+        self.btn_test2.setStyleSheet("background-color: rgb(100, 100, 100);")
+        self.btn_test3.setStyleSheet("background-color: rgb(100, 100, 100);")
 
         self.text_name = QLabel(txt_name)
         self.text_age = QLabel(txt_age)
@@ -70,6 +74,11 @@ class TestWin(QWidget):
         self.h_line.addLayout(self.l_line)  
         self.h_line.addLayout(self.r_line)        
         self.setLayout(self.h_line)
+        self.text_name.setFont(QFont("R", 13))
+        self.text_test1.setFont(QFont("R", 13))
+        self.text_test2.setFont(QFont("R", 13))
+        self.text_test3.setFont(QFont("R", 13))
+        self.text_age.setFont(QFont("R", 13))
     def next_click(self):
         self.hide()
         self.exp = Experiment(self.line_age.text(),self.line_test1.text(), self.line_test2.text(),self.line_test3.text())
